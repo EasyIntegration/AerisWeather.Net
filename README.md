@@ -4,7 +4,7 @@
 
 spend less time integrating and more time solving problems
 
-##CONFIGURE
+## CONFIGURE
 
 Add Aeris URL, ClientID, and Client Secret to your configurations
 
