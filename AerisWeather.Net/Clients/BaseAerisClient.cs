@@ -6,7 +6,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace AerisWeather.Net.Clients
 {
-    public abstract class BaseAerisClient//<T>
+    public interface IAerisClient
+    {
+        Task<T> Request<T>(string endPoint, Dictionary<string, string> param);
+    }
+
+
+    public abstract class BaseAerisClient : IAerisClient
     {
         protected IConfiguration config;
         //protected ILogger<T> logger;
@@ -35,7 +41,7 @@ namespace AerisWeather.Net.Clients
             }
         }
 
-        protected async Task<T> Request<T>(string endPoint, Dictionary<string, string> param)
+        public async Task<T> Request<T>(string endPoint, Dictionary<string, string> param)
         {
             var resultList = await baseUrl
                     .AppendPathSegments(endPoint)

@@ -36,10 +36,11 @@ namespace AerisWeather.Net
                 }));
 
 
-            serviceCollection.AddScoped<IForecastsClient, ForecastsClient>();
+            serviceCollection.AddScoped<IAerisClient, BaseAerisClient>();
+            serviceCollection.AddScoped<IForecasts, Forecasts>();
             serviceCollection.AddScoped<IPhrasesSummary, PhrasesSummary>();
             serviceCollection.AddScoped<IConditions, Conditions>();
-;
+
             return serviceCollection;
         }
     }

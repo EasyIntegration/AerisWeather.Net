@@ -15,7 +15,7 @@ namespace K23.Aeris.NetCore.Tests.Integration
         private const int NUMBEROFHOURLYFORCASTSEGMENTS = 120;
         private const int NUMBEROFDAILYFORECASTSEGMENTS = 10;
 
-        protected IForecastsClient forecastsClient;
+        protected IForecasts forecastsClient;
 
         public ForecastsIntegrationTests()
         {

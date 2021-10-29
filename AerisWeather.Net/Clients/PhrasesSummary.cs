@@ -18,7 +18,12 @@ namespace AerisWeather.Net.Clients
     public class PhrasesSummary : BaseAerisClient, IPhrasesSummary
     {
         private const string ENDPOINT = "phrases/summary";
+        private IAerisClient aerisClient;
 
+        public PhrasesSummary(IAerisClient aerisClient)
+        {
+            this.aerisClient = aerisClient;
+        }
 
         #region Today
 
@@ -91,7 +96,7 @@ namespace AerisWeather.Net.Clients
 
             try
             {
-                var result = await Request<List<PhrasesSummaryResponse>>(endPoint, queryParams);
+                var result = await aerisClient.Request<List<PhrasesSummaryResponse>>(endPoint, queryParams);
 
                 return result?.FirstOrDefault();
             }

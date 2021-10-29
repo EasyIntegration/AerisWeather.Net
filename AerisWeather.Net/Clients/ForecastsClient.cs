@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace AerisWeather.Net.Clients
 {
-    public interface IForecastsClient
+    public interface IForecasts
     {
 
         Task<ForecastsResponse> GetHourlyForecast(double lat, double lon, int numberOfDays, DateTime? from = null, DateTime? to = null);
@@ -32,13 +32,15 @@ namespace AerisWeather.Net.Clients
 
     }
 
-    
-
-
-    public class ForecastsClient : BaseAerisClient, IForecastsClient
+    public class Forecasts : IForecasts
     {
         private const string ENDPOINT = "forecasts";
+        private IAerisClient aerisClient;
 
+        public Forecasts(IAerisClient aerisClient)
+        {
+            this.aerisClient = aerisClient;
+        }
 
         #region Todays
         public async Task<ForecastsResponse> GetTodaysForecast(string lat, string lon)
@@ -59,8 +61,6 @@ namespace AerisWeather.Net.Clients
                 Filter = ForecastFilterTypes.Day,
                 Limit = 1
             });
-
-            
 
             return result;
         }
@@ -183,16 +183,22 @@ namespace AerisWeather.Net.Clients
 
             try
             {
-                var result = await Request<List<ForecastsResponse>>(endPoint, queryParams);
+                var result = await aerisClient.Request<List<ForecastsResponse>>(endPoint, queryParams);
 
-                return result?.FirstOrDefault();
+                return result == null ? throw new NullReferenceException() : result.FirstOrDefault();
+            }
+            catch(NullReferenceException)
+            {
+                throw;
             }
             catch (LocationNotFoundException)
             {
                 throw;
             }
-            catch (Exception)
+            catch (Exception e) 
             {
+                var x = e;
+
                 throw;
             }
         }
