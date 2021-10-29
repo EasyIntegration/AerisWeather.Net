@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Flurl" />
+    <None Remove="Flurl.Http" />
+    <None Remove="Microsoft.Extensions.DependencyInjection" />
+    <None Remove="Microsoft.Extensions.Configuration" />
+    <None Remove="Microsoft.Extensions.Configuration.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Flurl" Version="3.0.2" />
+    <PackageReference Include="Flurl.Http" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+  </ItemGroup>
+</Project>
