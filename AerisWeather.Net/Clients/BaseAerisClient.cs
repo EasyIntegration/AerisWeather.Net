@@ -12,7 +12,7 @@ namespace AerisWeather.Net.Clients
     }
 
 
-    public abstract class BaseAerisClient : IAerisClient
+    public class BaseAerisClient : IAerisClient
     {
         protected IConfiguration config;
         //protected ILogger<T> logger;

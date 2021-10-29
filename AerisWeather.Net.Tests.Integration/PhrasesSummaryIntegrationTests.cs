@@ -14,7 +14,7 @@ namespace K23.Aeris.NetCore.Tests.Integration.Tests
 
         public PhrasesSummaryIntegrationTests()
         {
-            phrasesSummary = new PhrasesSummary();
+            phrasesSummary = new PhrasesSummary(new BaseAerisClient());
         }
 
         #region GetTodaysPhase

@@ -19,7 +19,7 @@ namespace K23.Aeris.NetCore.Tests.Integration
 
         public ForecastsIntegrationTests()
         {
-            this.forecastsClient = new ForecastsClient();
+            this.forecastsClient = new Forecasts(new BaseAerisClient());
         }
 
         #region valid
