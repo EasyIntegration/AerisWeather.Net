@@ -1,5 +1,6 @@
 # AerisWeather.Net
 
+
 ## GOAL
 
 spend less time integrating and more time solving problems
@@ -15,4 +16,5 @@ Add Aeris URL, ClientID, and Client Secret to your configurations
 }
 
 register Serivce in StartUp or program file.  by adding  services.RegisterAerisWeather(ICONFIGURATION)
+
 
