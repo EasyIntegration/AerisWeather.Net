@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/Weather/GitHub%20EasyIntegration%20AerisWeather?repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=4&repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)
+
 # AerisWeather.Net
 
 
