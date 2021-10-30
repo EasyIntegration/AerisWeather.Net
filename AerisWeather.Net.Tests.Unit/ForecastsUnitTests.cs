@@ -29,26 +29,7 @@ namespace AerisWeather.Net.Tests.Unit
         public async Task GetHourlyForecast_WHEN_zip_is_Valid_THEN_true()
         {
 
-            var toReturn = new List<ForecastsResponse>()
-            {
-                new ForecastsResponse()
-                {
-                    Periods = new List<Period>()
-                    {
-                        new Period()
-                        {
-                            Icon = "sunny.png",
-                            Date = DateTime.Now,
-                            Humidity = 99,
-                            SolarRadiation  = 1
-                        }
-                    }
-                }
-            };
-
-            this.mockAerisClient
-                .Setup(x => x.Request<List<ForecastsResponse>>(It.IsAny<string>(), It.IsAny<Dictionary<string, string>>()))
-                .ReturnsAsync(toReturn);
+            SetUp1();
 
             var response = await GetHourlyForecast("12345", 1);
 
@@ -78,6 +59,43 @@ namespace AerisWeather.Net.Tests.Unit
         }
 
 
+        #region LatLonHourly
+
+        [Fact]
+        public async Task GetHourlyForecast_WHEN_lat_and_lon_is_Valid_RETURN()
+        {
+            SetUp1();
+
+            //await Assert.ThrowsAsync<NullReferenceException>(() => GetHourlyForecast(33.33, 33.33, 1));
+
+            var response = await GetHourlyForecast(33.33, 33.33, 1);
+
+            Assert.Equal(1, response.Count);
+        }
+
+        [Fact]
+        public async Task GetHourlyForecast_WHEN_AerisClient_lat_and_lon_Throws_LocationNotFound()
+        {
+            this.mockAerisClient
+                .Setup(x => x.Request<List<ForecastsResponse>>(It.IsAny<string>(), It.IsAny<Dictionary<string, string>>()))
+                .Throws(new LocationNotFoundException("test"));
+
+
+            await Assert.ThrowsAsync<LocationNotFoundException>(() => GetHourlyForecast(33.33,33.33, 1));
+        }
+
+        [Fact]
+        public async Task GetHourlyForecast_WHEN_AerisClient_lat_and_lon_returns_NULL_THROW_nullReferenceException()
+        {
+            this.mockAerisClient
+                .Setup(x => x.Request<List<ForecastsResponse>>(It.IsAny<string>(), It.IsAny<Dictionary<string, string>>()))
+                .Returns<List<ForecastsResponse>>(null);
+
+            await Assert.ThrowsAsync<NullReferenceException>(() => GetHourlyForecast(33.33,33.33, 1));
+        }
+
+
+        #endregion
 
         private async Task<List<Period>> GetTodaysForecast(string location)
         {
@@ -93,9 +111,9 @@ namespace AerisWeather.Net.Tests.Unit
             return response.Periods;
         }
 
-        private async Task<List<Period>> GetHourlyForecast(double lat, double lon)
+        private async Task<List<Period>> GetHourlyForecast(double lat, double lon, int numberOfSegments)
         {
-            var response = await this.forecastsClient.GetHourlyForecast(lat, lon, NUMBEROFHOURLYFORCASTSEGMENTS);
+            var response = await this.forecastsClient.GetHourlyForecast(lat, lon, numberOfSegments);
 
             return response.Periods;
         }
@@ -106,5 +124,30 @@ namespace AerisWeather.Net.Tests.Unit
 
             return response.Periods;
         }
+
+        private void SetUp1()
+        {
+            var toReturn = new List<ForecastsResponse>()
+            {
+                new ForecastsResponse()
+                {
+                    Periods = new List<Period>()
+                    {
+                        new Period()
+                        {
+                            Icon = "sunny.png",
+                            Date = DateTime.Now,
+                            Humidity = 99,
+                            SolarRadiation  = 1
+                        }
+                    }
+                }
+            };
+
+            this.mockAerisClient
+                .Setup(x => x.Request<List<ForecastsResponse>>(It.IsAny<string>(), It.IsAny<Dictionary<string, string>>()))
+                .ReturnsAsync(toReturn);
+        }
     }
+
 }
