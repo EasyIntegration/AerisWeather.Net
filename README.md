@@ -12,7 +12,9 @@
 
 spend less time integrating and more time solving problems
 
-## CONFIGURE
+## CONFIGURE / How To Use
+
+For use in your .Net5 projects.  Just add a reference to your startUp class and good to go
 
 Add Aeris URL, ClientID, and Client Secret to your configurations
 
