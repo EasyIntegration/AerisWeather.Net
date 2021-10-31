@@ -14,7 +14,7 @@ namespace K23.Aeris.NetCore.Tests.Integration.Tests
 
         public PhrasesSummaryIntegrationTests()
         {
-            phrasesSummary = new PhrasesSummary(new BaseAerisClient());
+            phrasesSummary = new PhrasesSummary(new AerisClient());
         }
 
         #region GetTodaysPhase
@@ -81,28 +81,28 @@ namespace K23.Aeris.NetCore.Tests.Integration.Tests
 
         private async Task<Phrase> GetTodaysPhrasesSummary(string location)
         {
-            var response = await this.phrasesSummary.GetTodaysPhrasesSummary(location);
+            var response = await this.phrasesSummary.TodayAsync(location);
 
             return response.Phrases;
         }
 
         private async Task<Phrase> GetTodaysPhrasesSummary(double lat, double lon)
         {
-            var response = await this.phrasesSummary.GetTodaysPhrasesSummary(lat, lon);
+            var response = await this.phrasesSummary.TodayAsync(lat, lon);
 
             return response.Phrases;
         }
 
         private async Task<Phrase> GetNextNHoursPhrasesSummary(string location)
         {
-            var response = await this.phrasesSummary.GetNextNHoursPhrasesSummary(location,80);
+            var response = await this.phrasesSummary.NextNHours(location,80);
 
             return response.Phrases;
         }
 
         private async Task<Phrase> GetNextNHoursPhrasesSummary(double lat, double lon)
         {
-            var response = await this.phrasesSummary.GetNextNHoursPhrasesSummary(lat, lon, 80);
+            var response = await this.phrasesSummary.NextNHours(lat, lon, 80);
 
             return response.Phrases;
         }

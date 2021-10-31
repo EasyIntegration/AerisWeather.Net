@@ -8,23 +8,23 @@ using AerisWeather.Net.Models.Responses;
 
 namespace AerisWeather.Net.Clients
 {
-    public interface ISunMoon : IWeather<List<SunMoonResponse>>
+    public interface ISunMoon :
+        IWeatherToday<List<SunMoonResponse>>
+        , IWeatherDaily<List<SunMoonResponse>>
     {
 
     }
 
 
-    public class SunMoon : ISunMoon
+    public class SunMoon : BaseWeather, ISunMoon
     {
-        private IAerisClient aerisClient;
-        private const string ENDPOINT = "sunmoon";
-
-        public SunMoon(IAerisClient aerisClient)
+        
+        public SunMoon(IAerisClient aerisClient) : base(aerisClient)
         {
-            this.aerisClient = aerisClient;
+            this.EndPoint = "sunmoon";
         }
 
-        public async Task<List<SunMoonResponse>> Today(string location)
+        public async Task<List<SunMoonResponse>> TodayAsync(string location)
         {
             return await GetSunMoonAsync(location, new GetSunMoonParameters()
             {
@@ -32,52 +32,97 @@ namespace AerisWeather.Net.Clients
             });
         }
 
-        public Task<List<SunMoonResponse>> Today(double lat, double lon)
+        public async Task<List<SunMoonResponse>> TodayAsync(double lat, double lon)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync($"{lat},{lon}", new GetSunMoonParameters()
+            {
+                Limit = 1
+            });
         }
 
-        public Task<List<SunMoonResponse>> Hourly(string location, int hours)
+        public async Task<List<SunMoonResponse>> TodayAsync(int zip)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync(zip.ToString(), new GetSunMoonParameters()
+            {
+                Limit = 1
+            });
         }
 
-        public Task<List<SunMoonResponse>> Hourly(double lat, double lon, int hours)
+        public async Task<List<SunMoonResponse>> TodayAsync(string city, string state)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync($"{city},{state}", new GetSunMoonParameters()
+            {
+                Limit = 1
+            });
         }
 
-        public Task<List<SunMoonResponse>> Hourly(string location, int hours, DateTime startDate)
+        public async Task<List<SunMoonResponse>> DailyAsync(int zip, int days)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync(zip.ToString(), new GetSunMoonParameters()
+            {
+                Limit = days
+            });
         }
 
-        public Task<List<SunMoonResponse>> Hourly(double lat, double lon, int hours, DateTime startDate)
+        public async Task<List<SunMoonResponse>> DailyAsync(string city, string state, int days)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync($"{city},{state}", new GetSunMoonParameters()
+            {
+                Limit = days
+            });
         }
 
-        public Task<List<SunMoonResponse>> Daily(string location, int days)
+        public async Task<List<SunMoonResponse>> DailyAsync(int zip, int days, DateTime startDate)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync($"{zip}", new GetSunMoonParameters()
+            {
+                Limit = days,
+                From = startDate
+            });
         }
 
-        public Task<List<SunMoonResponse>> Daily(double lat, double lon, int days)
+        public async Task<List<SunMoonResponse>> DailyAsync(string city, string state, int days, DateTime startDate)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync($"{city},{state}", new GetSunMoonParameters()
+            {
+                Limit = days,
+                From = startDate
+            });
         }
 
-        public Task<List<SunMoonResponse>> Daily(string location, int days, DateTime startDate)
+        public async Task<List<SunMoonResponse>> DailyAsync(string location, int days)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync(location, new GetSunMoonParameters()
+            {
+                Limit = days
+            });
         }
 
-        public Task<List<SunMoonResponse>> Daily(double lat, double lon, int days, DateTime startDate)
+        public async Task<List<SunMoonResponse>> DailyAsync(double lat, double lon, int days)
         {
-            throw new NotImplementedException();
+            return await GetSunMoonAsync($"{lat},{lon}", new GetSunMoonParameters()
+            {
+                Limit = days
+            });
         }
 
+        public async Task<List<SunMoonResponse>> DailyAsync(string location, int days, DateTime startDate)
+        {
+            return await GetSunMoonAsync(location, new GetSunMoonParameters()
+            {
+                Limit = days
+                ,From = startDate
+            });
+        }
 
+        public async Task<List<SunMoonResponse>> DailyAsync(double lat, double lon, int days, DateTime startDate)
+        {
+            return await GetSunMoonAsync($"{lat},{lon}", new GetSunMoonParameters()
+            {
+                Limit = days,
+                From = startDate
+            });
+        }
 
         private async Task<List<SunMoonResponse>> GetSunMoonAsync(string location, GetSunMoonParameters parameters)
         {
@@ -96,7 +141,7 @@ namespace AerisWeather.Net.Clients
                 queryParams.Add("to", parameters.To.Value.ToString("yyyy-MM-dd HH:mm"));
             }
 
-            string endPoint = $"{ENDPOINT}/{location}";
+            string endPoint = $"{EndPoint}/{location}";
 
             try
             {
@@ -113,5 +158,7 @@ namespace AerisWeather.Net.Clients
                 throw;
             }
         }
+
+        
     }
 }

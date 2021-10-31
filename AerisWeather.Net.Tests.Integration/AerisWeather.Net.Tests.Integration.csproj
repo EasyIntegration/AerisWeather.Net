@@ -32,6 +32,7 @@
     <None Remove="Microsoft.Extensions.Configuration.Json" />
     <None Remove="Microsoft.Extensions.DependencyInjection" />
     <None Remove="appsettings.dev_test.json" />
+    <None Remove="SunMoonIntegrationTests\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AerisWeather.Net\AerisWeather.Net.csproj" />
@@ -40,5 +41,8 @@
     <Content Include="appsettings.dev_test.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SunMoonIntegrationTests\" />
   </ItemGroup>
 </Project>
