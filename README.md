@@ -22,3 +22,16 @@ Add Aeris URL, ClientID, and Client Secret to your configurations
 register Serivce in StartUp or program file.  by adding  services.RegisterAerisWeather(ICONFIGURATION)
 
 
+
+
+## Code of Conduct
+
+This project has adopted the code of conduct defined by the Contributor Covenant
+to clarify expected behavior in our community.
+
+For more information, see the [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct).
+
+
+## License
+
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.  
