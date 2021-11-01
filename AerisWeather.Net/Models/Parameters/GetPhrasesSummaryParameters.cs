@@ -5,7 +5,6 @@ namespace AerisWeather.Net.Models
     {
         private int _limit = 1;
 
-        public DateTime? To { get; set; }
         public DateTime? From { get; set; }
 
         public int Limit

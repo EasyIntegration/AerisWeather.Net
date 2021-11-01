@@ -99,28 +99,28 @@ namespace AerisWeather.Net.Tests.Unit
 
         private async Task<List<Period>> GetTodaysForecast(string location)
         {
-            var response = await this.forecastsClient.GetTodaysForecast(location);
+            var response = await this.forecastsClient.TodayAsync(location);
 
             return response.Periods;
         }
 
         private async Task<List<Period>> GetHourlyForecast(string location, int numberOfSegments)
         {
-            var response = await this.forecastsClient.GetHourlyForecast(location, numberOfSegments);
+            var response = await this.forecastsClient.HourlyAsync(location, numberOfSegments);
 
             return response.Periods;
         }
 
         private async Task<List<Period>> GetHourlyForecast(double lat, double lon, int numberOfSegments)
         {
-            var response = await this.forecastsClient.GetHourlyForecast(lat, lon, numberOfSegments);
+            var response = await this.forecastsClient.HourlyAsync(lat, lon, numberOfSegments);
 
             return response.Periods;
         }
 
         private async Task<List<Period>> GetDailyForecast(string location)
         {
-            var response = await this.forecastsClient.GetDailyForecast(location, NUMBEROFDAILYFORECASTSEGMENTS);
+            var response = await this.forecastsClient.DailyAsync(location, NUMBEROFDAILYFORECASTSEGMENTS);
 
             return response.Periods;
         }

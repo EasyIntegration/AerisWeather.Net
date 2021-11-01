@@ -136,11 +136,6 @@ namespace AerisWeather.Net.Clients
                 queryParams.Add("from", parameters.From.Value.ToString("yyyy-MM-dd HH:mm"));
             }
 
-            if (parameters.To.HasValue)
-            {
-                queryParams.Add("to", parameters.To.Value.ToString("yyyy-MM-dd HH:mm"));
-            }
-
             string endPoint = $"{EndPoint}/{location}";
 
             try
