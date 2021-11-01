@@ -1,5 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![commits](https://img.shields.io/github/commit-activity/m/EasyIntegration/AerisWeather.Net)
+
  | development / PR | main |
  | -----------------| -----|
  |[![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/PR%20-%20EasyIntegration%20AerisWeather?branchName=development)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=5&branchName=development) | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/GitHub%20EasyIntegration%20AerisWeather?repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=4&repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)
