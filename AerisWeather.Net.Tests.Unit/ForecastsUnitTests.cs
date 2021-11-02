@@ -33,7 +33,8 @@ namespace AerisWeather.Net.Tests.Unit
 
             var response = await GetHourlyForecast("12345", 1);
 
-            Assert.Equal(1, response.Count);
+            
+            Assert.True(response.Count == 1);
         }
 
 
@@ -70,7 +71,7 @@ namespace AerisWeather.Net.Tests.Unit
 
             var response = await GetHourlyForecast(33.33, 33.33, 1);
 
-            Assert.Equal(1, response.Count);
+            Assert.True(response.Count == 1);
         }
 
         [Fact]
