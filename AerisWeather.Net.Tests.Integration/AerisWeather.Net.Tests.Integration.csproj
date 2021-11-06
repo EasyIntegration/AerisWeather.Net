@@ -33,6 +33,7 @@
     <None Remove="Microsoft.Extensions.DependencyInjection" />
     <None Remove="appsettings.dev_test.json" />
     <None Remove="SunMoonIntegrationTests\" />
+    <None Remove="TidesIntegrationTests\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AerisWeather.Net\AerisWeather.Net.csproj" />
@@ -44,5 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SunMoonIntegrationTests\" />
+    <Folder Include="TidesIntegrationTests\" />
   </ItemGroup>
 </Project>

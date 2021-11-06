@@ -9,7 +9,7 @@ namespace AerisWeather.Net.Models.Responses
         public long Ticks { get; set; }
 
         [JsonProperty("dateTimeISO")]
-        public DateTime DateTime { get; set; }
+        public DateTimeOffset DateTimeOffset { get; set; }
 
         [JsonProperty("type")]
         public string Type { get; set; }

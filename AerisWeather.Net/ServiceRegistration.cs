@@ -40,6 +40,8 @@ namespace AerisWeather.Net
             serviceCollection.AddScoped<IForecasts, Forecasts>();
             serviceCollection.AddScoped<IPhrasesSummary, PhrasesSummary>();
             serviceCollection.AddScoped<IConditions, Conditions>();
+            serviceCollection.AddScoped<ISunMoon, SunMoon>();
+            serviceCollection.AddScoped<ITides, Tides>();
 
             return serviceCollection;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AerisWeather.Net.Models.Exceptions;
 using AerisWeather.Net.Models.Parameters;
@@ -133,9 +134,9 @@ namespace AerisWeather.Net.Clients
 
             try
             {
-                var result = await aerisClient.Request<TidesResponse>(endPoint, queryParams);
+                var result = await aerisClient.Request<List<TidesResponse>>(endPoint, queryParams);
 
-                return result;
+                return result.FirstOrDefault();
             }
             catch (LocationNotFoundException)
             {
