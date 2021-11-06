@@ -1,9 +1,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![commits](https://img.shields.io/github/commit-activity/m/EasyIntegration/AerisWeather.Net)
 
-
-main | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/Weather/GitHub%20EasyIntegration%20AerisWeather?repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=4&repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)
-
+ | os | development / PR | main |
+ |----| -----------------| -----|
+ | linux | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/PR%20-%20EasyIntegration%20AerisWeather?branchName=development)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=5&branchName=development) | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/EasyIntegration%20AerisWeather%20-%20Linux?repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=4&repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)
+ |windows |  | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/EasyIntegration%20AerisWeather%20-%20Win?branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=6&branchName=main)
+ |mac | |[![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/EasyIntegration%20AerisWeather%20-%20Mac?branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=7&branchName=main)
 
 
 # AerisWeather.Net
@@ -13,7 +16,9 @@ main | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/s
 
 spend less time integrating and more time solving problems
 
-## CONFIGURE
+## CONFIGURE / How To Use
+
+For use in your .Net5 projects.  Just add a reference to your startUp class and good to go
 
 Add Aeris URL, ClientID, and Client Secret to your configurations
 
