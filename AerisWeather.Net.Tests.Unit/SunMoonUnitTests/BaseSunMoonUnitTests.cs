@@ -7,14 +7,14 @@ using Moq;
 
 namespace AerisWeather.Net.Tests.Unit.SunMoonUnitTests
 {
-    public class BaseSunMoonUnitTests
+    public class BaseSunMoonUnitTests : BaseTest
     {
         public ISunMoon sunMoon;
-        public Mock<IAerisClient> mockAerisClient;
+        
 
-        public BaseSunMoonUnitTests()
+        public BaseSunMoonUnitTests() : base()
         {
-            this.mockAerisClient = new Mock<IAerisClient>();
+           
             this.sunMoon = new SunMoon(this.mockAerisClient.Object);
         }
 
@@ -33,7 +33,7 @@ namespace AerisWeather.Net.Tests.Unit.SunMoonUnitTests
                 .ReturnsAsync(x);
         }
 
-        public void EmptyListSetUp()
+        public override void MockResponseIsEmptyList()
         {
             var x = new List<SunMoonResponse>();
 
@@ -41,7 +41,7 @@ namespace AerisWeather.Net.Tests.Unit.SunMoonUnitTests
                 .ReturnsAsync(x);
         }
 
-        public void NullSetUp()
+        public override void MockResponseIsNull()
         {
             List<SunMoonResponse> x = null;
 

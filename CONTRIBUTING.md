@@ -1,23 +1,24 @@
-Git Commit Messages
-Use the present tense ("Add feature" not "Added feature")
-Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-Limit the first line to 72 characters or less
+Thank you for contributing, please if you see a need report it or contribute. 
+
+## Commits
+
+Git Commit Messages template: {{emoji}} {{what}} {{why}} {{where}}
+
+Start your commit message with an applicable emoji:
+
+- :new: `:new:` when adding new features
+- :mechanical_arm: `:mechanical_arm:` enhancement to existing feature
+- :bug: `:bug:` when fixing a bug
+- :art: `:art:` when improving the format/structure of the code
+- :memo: `:memo:` when writing docs
+- :penguin: `:penguin:` when fixing something on Linux
+- :apple: `:apple:` when fixing something on macOS
+- :window: `:window:` when fixing something on Windows
+- :fire: `:fire:` when removing code or files
+- :green_heart: `:green_heart:` when fixing the CI build
+- :white_check_mark: `:white_check_mark:` when adding tests
+- :shirt: `:shirt:` when removing linter warnings
+	
 Reference issues and pull requests liberally after the first line
 When only changing documentation, include [ci skip] in the commit title
-Consider starting the commit message with an applicable emoji:
-:new: when adding new features
-🎨 :art: when improving the format/structure of the code
-🐎 :racehorse: when improving performance
-🚱 :non-potable_water: when plugging memory leaks
-📝 :memo: when writing docs
-🐧 :penguin: when fixing something on Linux
-🍎 :apple: when fixing something on macOS
-🏁 :checkered_flag: when fixing something on Windows
-🐛 :bug: when fixing a bug
-🔥 :fire: when removing code or files
-💚 :green_heart: when fixing the CI build
-✅ :white_check_mark: when adding tests
-🔒 :lock: when dealing with security
-⬆️ :arrow_up: when upgrading dependencies
-⬇️ :arrow_down: when downgrading dependencies
-👕 :shirt: when removing linter warnings
+

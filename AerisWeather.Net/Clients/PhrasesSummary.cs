@@ -13,14 +13,12 @@ namespace AerisWeather.Net.Clients
         Task<PhrasesSummaryResponse> NextNHours(double lat, double lon, int numberOfHours);
     }
 
-    public class PhrasesSummary : AerisClient, IPhrasesSummary
+    public class PhrasesSummary : BaseWeather, IPhrasesSummary
     {
-        private const string ENDPOINT = "phrases/summary";
-        private IAerisClient aerisClient;
-
-        public PhrasesSummary(IAerisClient aerisClient)
+        
+        public PhrasesSummary(IAerisClient aerisClient) : base(aerisClient)
         {
-            this.aerisClient = aerisClient;
+            this.EndPoint = "phrases/summary";
         }
 
         #region Today
@@ -105,7 +103,7 @@ namespace AerisWeather.Net.Clients
                 queryParams.Add("from", parameters.From.Value.ToString("yyyy-MM-dd HH:mm"));
             }
 
-            string endPoint = $"{ENDPOINT}/{location}";
+            string endPoint = $"{EndPoint}/{location}";
 
             try
             {

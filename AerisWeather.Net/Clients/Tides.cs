@@ -136,14 +136,15 @@ namespace AerisWeather.Net.Clients
             {
                 var result = await aerisClient.Request<List<TidesResponse>>(endPoint, queryParams);
 
-                return result.FirstOrDefault();
+                return result?.FirstOrDefault();
             }
             catch (LocationNotFoundException)
             {
                 throw;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                var x = e;
                 throw;
             }
         }
