@@ -19,7 +19,7 @@ namespace K23.Aeris.NetCore.Tests.Integration
 
         public ForecastsIntegrationTests()
         {
-            this.forecastsClient = new Forecasts(new BaseAerisClient());
+            this.forecastsClient = new Forecasts(new AerisClient());
         }
 
         #region valid
@@ -127,28 +127,28 @@ namespace K23.Aeris.NetCore.Tests.Integration
 
         private async Task<List<Period>> GetTodaysForecast(string location)
         {
-            var response = await this.forecastsClient.GetTodaysForecast(location);
+            var response = await this.forecastsClient.TodayAsync(location);
 
             return response.Periods;
         }
 
         private async Task<List<Period>> GetHourlyForecast(string location)
         {
-            var response = await this.forecastsClient.GetHourlyForecast(location, NUMBEROFHOURLYFORCASTSEGMENTS);
+            var response = await this.forecastsClient.HourlyAsync(location, NUMBEROFHOURLYFORCASTSEGMENTS);
 
             return response.Periods;
         }
 
         private async Task<List<Period>> GetHourlyForecast(double lat, double lon)
         {
-            var response = await this.forecastsClient.GetHourlyForecast(lat, lon, NUMBEROFHOURLYFORCASTSEGMENTS);
+            var response = await this.forecastsClient.HourlyAsync(lat, lon, NUMBEROFHOURLYFORCASTSEGMENTS);
 
             return response.Periods;
         }
 
         private async Task<List<Period>> GetDailyForecast(string location)
         {
-            var response = await this.forecastsClient.GetDailyForecast(location, NUMBEROFDAILYFORECASTSEGMENTS);
+            var response = await this.forecastsClient.DailyAsync(location, NUMBEROFDAILYFORECASTSEGMENTS);
 
             return response.Periods;
         }

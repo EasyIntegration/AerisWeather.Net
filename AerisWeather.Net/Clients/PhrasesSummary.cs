@@ -7,39 +7,55 @@ using AerisWeather.Net.Models.Exceptions;
 
 namespace AerisWeather.Net.Clients
 {
-    public interface IPhrasesSummary
-    {
-        Task<PhrasesSummaryResponse> GetTodaysPhrasesSummary(string location);
-        Task<PhrasesSummaryResponse> GetTodaysPhrasesSummary(double lat, double lon);
-        Task<PhrasesSummaryResponse> GetNextNHoursPhrasesSummary(string location, int numberOfHours);
-        Task<PhrasesSummaryResponse> GetNextNHoursPhrasesSummary(double lat, double lon, int numberOfHours);
+    public interface IPhrasesSummary : IWeatherToday<PhrasesSummaryResponse>
+    { 
+        Task<PhrasesSummaryResponse> NextNHours(string location, int numberOfHours);
+        Task<PhrasesSummaryResponse> NextNHours(double lat, double lon, int numberOfHours);
     }
 
-    public class PhrasesSummary : BaseAerisClient, IPhrasesSummary
+    public class PhrasesSummary : BaseWeather, IPhrasesSummary
     {
-        private const string ENDPOINT = "phrases/summary";
-        private IAerisClient aerisClient;
-
-        public PhrasesSummary(IAerisClient aerisClient)
+        
+        public PhrasesSummary(IAerisClient aerisClient) : base(aerisClient)
         {
-            this.aerisClient = aerisClient;
+            this.EndPoint = "phrases/summary";
         }
 
         #region Today
 
-        public async Task<PhrasesSummaryResponse> GetTodaysPhrasesSummary(string location)
+        public async Task<PhrasesSummaryResponse> TodayAsync(int zip)
         {
-            var result = await GetPhraseSummaryAsync(location, new GetPhrasesSummaryParameters()
+            var result = await GetPhraseSummaryAsync($"{zip}", new GetPhrasesSummaryParameters()
             {
                 Limit = 24
-            }) ;
+            });
 
             return result;
         }
 
-        public async Task<PhrasesSummaryResponse> GetTodaysPhrasesSummary(double lat, double lon)
+        public async Task<PhrasesSummaryResponse> TodayAsync(string city, string state)
+        {
+            var result = await GetPhraseSummaryAsync($"{city},{state}", new GetPhrasesSummaryParameters()
+            {
+                Limit = 24
+            });
+
+            return result;
+        }
+
+        public async Task<PhrasesSummaryResponse> TodayAsync(double lat, double lon)
         {
             var result = await GetPhraseSummaryAsync($"{lat},{lon}", new GetPhrasesSummaryParameters()
+            {
+                Limit = 24
+            });
+
+            return result;
+        }
+
+        public async Task<PhrasesSummaryResponse> TodayAsync(string location)
+        {
+            var result = await GetPhraseSummaryAsync(location, new GetPhrasesSummaryParameters()
             {
                 Limit = 24
             });
@@ -52,7 +68,7 @@ namespace AerisWeather.Net.Clients
 
         #region Today
 
-        public async Task<PhrasesSummaryResponse> GetNextNHoursPhrasesSummary(string location, int numberOfHours)
+        public async Task<PhrasesSummaryResponse> NextNHours(string location, int numberOfHours)
         {
             var result = await GetPhraseSummaryAsync(location, new GetPhrasesSummaryParameters()
             {
@@ -62,7 +78,7 @@ namespace AerisWeather.Net.Clients
             return result;
         }
 
-        public async Task<PhrasesSummaryResponse> GetNextNHoursPhrasesSummary(double lat, double lon, int numberOfHours)
+        public async Task<PhrasesSummaryResponse> NextNHours(double lat, double lon, int numberOfHours)
         {
             var result = await GetPhraseSummaryAsync($"{lat},{lon}", new GetPhrasesSummaryParameters()
             {
@@ -87,12 +103,7 @@ namespace AerisWeather.Net.Clients
                 queryParams.Add("from", parameters.From.Value.ToString("yyyy-MM-dd HH:mm"));
             }
 
-            if (parameters.To.HasValue)
-            {
-                queryParams.Add("to", parameters.To.Value.ToString("yyyy-MM-dd HH:mm"));
-            }
-
-            string endPoint = $"{ENDPOINT}/{location}";
+            string endPoint = $"{EndPoint}/{location}";
 
             try
             {
@@ -109,5 +120,7 @@ namespace AerisWeather.Net.Clients
                 throw;
             }
         }
+
+        
     }
 }

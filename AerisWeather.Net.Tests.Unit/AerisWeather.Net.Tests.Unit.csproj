@@ -27,8 +27,16 @@
   <ItemGroup>
     <None Remove="coverlet.msbuild" />
     <None Remove="Moq" />
+    <None Remove="SunMoonUnitTests\" />
+    <None Remove="TidesUnitTests\" />
+    <None Remove="PhraseUnitTests\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AerisWeather.Net\AerisWeather.Net.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SunMoonUnitTests\" />
+    <Folder Include="TidesUnitTests\" />
+    <Folder Include="PhraseUnitTests\" />
   </ItemGroup>
 </Project>

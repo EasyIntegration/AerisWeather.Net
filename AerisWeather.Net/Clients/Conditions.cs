@@ -7,7 +7,7 @@ namespace AerisWeather.Net.Clients
     }
 
 
-    public class Conditions : BaseAerisClient, IConditions
+    public class Conditions : AerisClient, IConditions
     {
         private const string ENDPOINT = "conditions";
 

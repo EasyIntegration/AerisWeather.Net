@@ -12,7 +12,7 @@ namespace AerisWeather.Net.Clients
     }
 
 
-    public class BaseAerisClient : IAerisClient
+    public class AerisClient : IAerisClient
     {
         protected IConfiguration config;
         //protected ILogger<T> logger;
@@ -20,7 +20,7 @@ namespace AerisWeather.Net.Clients
         protected internal readonly string clientId;
         protected internal readonly string clientSecret;
 
-        public BaseAerisClient()//, ILoggerFactory loggerFactory)
+        public AerisClient()//, ILoggerFactory loggerFactory)
         {
             this.config = ServiceRegistration.Configuration;
 
