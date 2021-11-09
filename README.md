@@ -4,9 +4,10 @@
 
  | os | development / PR | main |
  |----| -----------------| -----|
- | linux | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/PR%20-%20EasyIntegration%20AerisWeather?branchName=development)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=5&branchName=development) | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/EasyIntegration%20AerisWeather%20-%20Linux?repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=4&repoName=EasyIntegration%2FAerisWeather.Net&branchName=main)
- |windows |  | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/EasyIntegration%20AerisWeather%20-%20Win?branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=6&branchName=main)
- |mac | |[![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/EasyIntegration%20AerisWeather%20-%20Mac?branchName=main)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=7&branchName=main)
+ | linux | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/PR%20-%20EasyIntegration%20AerisWeather?branchName=development)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=5&branchName=development) | [![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Linux)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=8)
+ |windows |  | [![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Windows)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=9)
+ |mac | |[![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Mac)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=10)
+code coverage| ![coverage](https://img.shields.io/azure-devops/coverage/kullenwilliams13/EasyIntegration/11)| ![coverage](https://img.shields.io/azure-devops/coverage/kullenwilliams13/EasyIntegration/8)
 
 
 # AerisWeather.Net
