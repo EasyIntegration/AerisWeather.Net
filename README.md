@@ -4,7 +4,7 @@
 
  | os | development / PR | main |
  |----| -----------------| -----|
- | linux | [![Build Status](https://dev.azure.com/kullenwilliams13/K23/_apis/build/status/EasyIntegrationAerisWeather/PR%20-%20EasyIntegration%20AerisWeather?branchName=development)](https://dev.azure.com/kullenwilliams13/K23/_build/latest?definitionId=5&branchName=development) | [![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Linux)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=8)
+ | linux | [![Build Status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/PR-AerisWeather-Linux?branchName=refs%2Fpull%2F5%2Fmerge)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=11&branchName=refs%2Fpull%2F5%2Fmerge)| [![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Linux)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=8)
  |windows |  | [![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Windows)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=9)
  |mac | |[![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Mac)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=10)
 code coverage| ![coverage](https://img.shields.io/azure-devops/coverage/kullenwilliams13/EasyIntegration/11)| ![coverage](https://img.shields.io/azure-devops/coverage/kullenwilliams13/EasyIntegration/8)
