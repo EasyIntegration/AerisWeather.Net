@@ -5,9 +5,10 @@
  | os | development / PR | main |
  |----| -----------------| -----|
  | linux | [![Build Status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/PR-AerisWeather-Linux?branchName=refs%2Fpull%2F5%2Fmerge)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=11&branchName=refs%2Fpull%2F5%2Fmerge)| [![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Linux)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=8)
- |windows |  | [![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Windows)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=9)
- |mac | |[![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Mac)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=10)
-code coverage| ![coverage](https://img.shields.io/azure-devops/coverage/kullenwilliams13/EasyIntegration/11)| ![coverage](https://img.shields.io/azure-devops/coverage/kullenwilliams13/EasyIntegration/8)
+ |windows | NA | [![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Windows)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=9)
+ |mac |  NA |[![Build status](https://dev.azure.com/kullenwilliams13/EasyIntegration/_apis/build/status/AerisWeather/AerisWeather-Mac)](https://dev.azure.com/kullenwilliams13/EasyIntegration/_build/latest?definitionId=10)
+ | tests | ![tests](https://img.shields.io/azure-devops/tests/kullenwilliams13/EasyIntegration/11) | ![test](https://img.shields.io/azure-devops/tests/kullenwilliams13/EasyIntegration/8)
+| code coverage| ![coverage](https://img.shields.io/azure-devops/coverage/kullenwilliams13/EasyIntegration/11)| ![coverage](https://img.shields.io/azure-devops/coverage/kullenwilliams13/EasyIntegration/8)
 
 
 # AerisWeather.Net
