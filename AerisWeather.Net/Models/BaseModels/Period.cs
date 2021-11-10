@@ -8,7 +8,7 @@ namespace AerisWeather.Net.Models
         public long? Timestamp { get; set; }
 
         [JsonProperty("dateTimeISO")]
-        public DateTime? Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("tempF")]
         public double? TemperatureFahrenheit { get; set; }

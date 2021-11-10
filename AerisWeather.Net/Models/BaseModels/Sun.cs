@@ -9,19 +9,19 @@ namespace AerisWeather.Net.Models.BaseModels
         public long RiseTicks { get; set; }
 
         [JsonProperty("riseISO")]
-        public DateTime RiseOn { get; set; }
+        public DateTimeOffset RiseOn { get; set; }
 
         [JsonProperty("set")]
         public long SetTicks { get; set; }
 
         [JsonProperty("setISO")]
-        public DateTime SetOn{ get; set; }
+        public DateTimeOffset SetOn{ get; set; }
 
         [JsonProperty("transit")]
         public long TransitTicks { get; set; }
 
         [JsonProperty("transitISO")]
-        public DateTime TransitOn { get; set; }
+        public DateTimeOffset TransitOn { get; set; }
 
         [JsonProperty("midnightSun")]
         public bool IsMidnightSun { get; set; }
