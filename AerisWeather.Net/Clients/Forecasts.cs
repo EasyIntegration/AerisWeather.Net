@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AerisWeather.Net.Models;
 using AerisWeather.Net.Models.Exceptions;
+using AerisWeather.Net.Models.Responses.Forecasts;
 using Flurl;
 using Microsoft.Extensions.Configuration;
 
@@ -12,7 +13,7 @@ namespace AerisWeather.Net.Clients
     public interface IForecasts :
         IWeatherHourly<ForecastsResponse>
         , IWeatherToday<ForecastsResponse>
-        ,IWeatherDaily<ForecastsResponse>
+        , IWeatherDaily<ForecastsResponse>
     {
 
     }

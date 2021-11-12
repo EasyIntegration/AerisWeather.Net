@@ -12,7 +12,7 @@ namespace AerisWeather.Net
         internal static IConfiguration Configuration;
 
 
-        public static IServiceCollection RegisterAerisWeather(this IServiceCollection serviceCollection, IConfiguration configuration)
+        public static IServiceCollection RegisterAerisWeatherDotNet(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
 
             Configuration = configuration;

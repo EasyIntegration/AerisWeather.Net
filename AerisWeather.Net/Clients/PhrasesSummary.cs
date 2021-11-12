@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AerisWeather.Net.Models;
 using AerisWeather.Net.Models.Exceptions;
+using AerisWeather.Net.Models.Responses.PhraseSummary;
 
 namespace AerisWeather.Net.Clients
 {

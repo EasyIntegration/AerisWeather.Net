@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using AerisWeather.Net.Clients;
 using AerisWeather.Net.Models;
+using AerisWeather.Net.Models.BaseModels;
 using AerisWeather.Net.Models.Exceptions;
 using Xunit;
 
@@ -125,28 +126,28 @@ namespace K23.Aeris.NetCore.Tests.Integration
 
         #endregion
 
-        private async Task<List<Period>> GetTodaysForecast(string location)
+        private async Task<List<ForecastsPeriod>> GetTodaysForecast(string location)
         {
             var response = await this.forecastsClient.TodayAsync(location);
 
             return response.Periods;
         }
 
-        private async Task<List<Period>> GetHourlyForecast(string location)
+        private async Task<List<ForecastsPeriod>> GetHourlyForecast(string location)
         {
             var response = await this.forecastsClient.HourlyAsync(location, NUMBEROFHOURLYFORCASTSEGMENTS);
 
             return response.Periods;
         }
 
-        private async Task<List<Period>> GetHourlyForecast(double lat, double lon)
+        private async Task<List<ForecastsPeriod>> GetHourlyForecast(double lat, double lon)
         {
             var response = await this.forecastsClient.HourlyAsync(lat, lon, NUMBEROFHOURLYFORCASTSEGMENTS);
 
             return response.Periods;
         }
 
-        private async Task<List<Period>> GetDailyForecast(string location)
+        private async Task<List<ForecastsPeriod>> GetDailyForecast(string location)
         {
             var response = await this.forecastsClient.DailyAsync(location, NUMBEROFDAILYFORECASTSEGMENTS);
 

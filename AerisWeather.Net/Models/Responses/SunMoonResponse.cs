@@ -11,5 +11,8 @@ namespace AerisWeather.Net.Models.Responses
 
         [JsonProperty("moon")]
         public Moon Moon { get; set; }
+
+        [JsonProperty("profile")]
+        public Profile Profile { get; set; }
     }
 }

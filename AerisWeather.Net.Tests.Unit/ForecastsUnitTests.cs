@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AerisWeather.Net.Clients;
 using AerisWeather.Net.Models;
+using AerisWeather.Net.Models.BaseModels;
 using AerisWeather.Net.Models.Exceptions;
 using Moq;
 using Xunit;
@@ -98,28 +99,28 @@ namespace AerisWeather.Net.Tests.Unit
 
         #endregion
 
-        private async Task<List<Period>> GetTodaysForecast(string location)
+        private async Task<List<ForecastsPeriod>> GetTodaysForecast(string location)
         {
             var response = await this.forecastsClient.TodayAsync(location);
 
             return response.Periods;
         }
 
-        private async Task<List<Period>> GetHourlyForecast(string location, int numberOfSegments)
+        private async Task<List<ForecastsPeriod>> GetHourlyForecast(string location, int numberOfSegments)
         {
             var response = await this.forecastsClient.HourlyAsync(location, numberOfSegments);
 
             return response.Periods;
         }
 
-        private async Task<List<Period>> GetHourlyForecast(double lat, double lon, int numberOfSegments)
+        private async Task<List<ForecastsPeriod>> GetHourlyForecast(double lat, double lon, int numberOfSegments)
         {
             var response = await this.forecastsClient.HourlyAsync(lat, lon, numberOfSegments);
 
             return response.Periods;
         }
 
-        private async Task<List<Period>> GetDailyForecast(string location)
+        private async Task<List<ForecastsPeriod>> GetDailyForecast(string location)
         {
             var response = await this.forecastsClient.DailyAsync(location, NUMBEROFDAILYFORECASTSEGMENTS);
 
@@ -132,9 +133,9 @@ namespace AerisWeather.Net.Tests.Unit
             {
                 new ForecastsResponse()
                 {
-                    Periods = new List<Period>()
+                    Periods = new List<ForecastsPeriod>()
                     {
-                        new Period()
+                        new ForecastsPeriod()
                         {
                             Icon = "sunny.png",
                             Date = DateTime.Now,

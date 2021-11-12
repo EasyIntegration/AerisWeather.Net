@@ -1,7 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![commits](https://img.shields.io/github/commit-activity/m/EasyIntegration/AerisWeather.Net)
-
  | | development / PR | main |
  |----| -----------------| -----|
  | | ![commits](https://img.shields.io/github/commit-activity/m/EasyIntegration/AerisWeather.Net/development) | ![commits](https://img.shields.io/github/commit-activity/m/EasyIntegration/AerisWeather.Net/main)|

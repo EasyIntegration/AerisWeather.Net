@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AerisWeather.Net.Models.Exceptions;
 using AerisWeather.Net.Models.Parameters;
 using AerisWeather.Net.Models.Responses;
+using AerisWeather.Net.Models.Responses.Tides;
 
 namespace AerisWeather.Net.Clients
 {

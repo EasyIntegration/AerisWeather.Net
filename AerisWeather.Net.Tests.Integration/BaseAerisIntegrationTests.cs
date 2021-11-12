@@ -16,7 +16,7 @@ namespace K23.Aeris.NetCore.Tests.Integration
         {
             var serviceCollection = new ServiceCollection();
 
-            ServiceRegistration.RegisterAerisWeather(serviceCollection, Configuration);
+            ServiceRegistration.RegisterAerisWeatherDotNet(serviceCollection, Configuration);
         }
 
 

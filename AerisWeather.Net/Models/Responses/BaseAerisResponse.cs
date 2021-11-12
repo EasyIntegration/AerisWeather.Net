@@ -10,7 +10,6 @@ namespace AerisWeather.Net.Models
         [JsonProperty("place")]
         public Place Place { get; set; }
 
-        [JsonProperty("profile")]
-        public Profile Profile { get; set; }
+        
     }
 }
