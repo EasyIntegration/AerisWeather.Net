@@ -34,6 +34,7 @@
     <None Remove="SunMoonIntegrationTests\" />
     <None Remove="TidesIntegrationTests\" />
     <None Remove="appsettings.dev_test.json" />
+    <None Remove="AirQualityIntegrationTests\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AerisWeather.Net\AerisWeather.Net.csproj" />
@@ -41,6 +42,7 @@
   <ItemGroup>
     <Folder Include="SunMoonIntegrationTests\" />
     <Folder Include="TidesIntegrationTests\" />
+    <Folder Include="AirQualityIntegrationTests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="appsettings.dev_test.json">

@@ -5,6 +5,7 @@ using AerisWeather.Net.Clients;
 using AerisWeather.Net.Models;
 using AerisWeather.Net.Models.BaseModels;
 using AerisWeather.Net.Models.Exceptions;
+using AerisWeather.Net.Models.Responses.Forecasts;
 using Moq;
 using Xunit;
 

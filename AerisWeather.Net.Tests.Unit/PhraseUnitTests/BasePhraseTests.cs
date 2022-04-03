@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AerisWeather.Net.Clients;
 using AerisWeather.Net.Models;
+using AerisWeather.Net.Models.Responses.PhraseSummary;
 using Moq;
 
 namespace AerisWeather.Net.Tests.Unit.PhraseUnitTests

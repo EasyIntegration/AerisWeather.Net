@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AerisWeather.Net.Models;
 using AerisWeather.Net.Models.Exceptions;
+using AerisWeather.Net.Models.Responses.PhraseSummary;
 using Xunit;
 
 namespace AerisWeather.Net.Tests.Unit.PhraseUnitTests

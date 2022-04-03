@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AerisWeather.Net.Models.Exceptions;
 using AerisWeather.Net.Models.Responses;
+using AerisWeather.Net.Models.Responses.Tides;
 using Xunit;
 
 namespace AerisWeather.Net.Tests.Unit.TidesUnitTests

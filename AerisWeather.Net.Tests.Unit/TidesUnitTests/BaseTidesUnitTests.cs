@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AerisWeather.Net.Clients;
 using AerisWeather.Net.Models.Responses;
+using AerisWeather.Net.Models.Responses.Tides;
 using Moq;
 
 namespace AerisWeather.Net.Tests.Unit.TidesUnitTests

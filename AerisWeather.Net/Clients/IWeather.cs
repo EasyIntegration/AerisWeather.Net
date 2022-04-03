@@ -3,7 +3,16 @@ using System.Threading.Tasks;
 
 namespace AerisWeather.Net.Clients
 {
-    
+
+    public interface IWeatherNow<T>
+    {
+
+        Task<T> NowAsync(string city, string state);
+        Task<T> NowAsync(double lat, double lon);
+        Task<T> NowAsync(string zip);
+    }
+
+
     public interface IWeatherToday<T>
     {
         
