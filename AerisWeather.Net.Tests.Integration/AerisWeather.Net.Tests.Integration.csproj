@@ -33,7 +33,6 @@
     <None Remove="Microsoft.Extensions.DependencyInjection" />
     <None Remove="SunMoonIntegrationTests\" />
     <None Remove="TidesIntegrationTests\" />
-    <None Remove="appsettings.dev_test.json" />
     <None Remove="AirQualityIntegrationTests\" />
     <None Remove="appsettings.json" />
   </ItemGroup>
@@ -46,9 +45,8 @@
     <Folder Include="AirQualityIntegrationTests\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appsettings.dev_test.json">
+    <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="appsettings.json" />
   </ItemGroup>
 </Project>
