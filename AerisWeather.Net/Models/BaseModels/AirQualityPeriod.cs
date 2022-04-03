@@ -12,26 +12,33 @@ namespace AerisWeather.Net.Models.BaseModels
         public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("aqi")]
-        public int AirQuailityIndex { get; set; }
+        public int? AirQuailityIndex { get; set; }
 
         [JsonProperty("category")]
         public string Category { get; set; }
 
+        [JsonProperty("pollutants")]
         public List<Pollutant> Pollutants { get; set; }
     }
 
     public class Pollutant
     {
+        [JsonProperty("type")]
         public string Type { get; set; }
 
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-        public int ValuePPB { get; set; }
+        [JsonProperty("valuePPB")]
+        public float? ValuePPB { get; set; }
 
-        public float ValueUGM3 { get; set; }
+        [JsonProperty("valueUGM3")]
+        public float? ValueUGM3 { get; set; }
 
-        public int AQI { get; set; }
+        [JsonProperty("aqi")]
+        public float? AirQuailityIndex { get; set; }
 
+        [JsonProperty("category")]
         public string Category { get; set; }
     }
 }

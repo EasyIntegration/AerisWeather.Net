@@ -23,8 +23,17 @@ namespace K23.Aeris.NetCore.Tests.Integration
 
         public static IConfiguration InitConfig()
         {
-            var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder().AddJsonFile("appsettings.dev_test.json").Build();
-            return config;
+            try
+            {
+                var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder().AddJsonFile("appsettings.dev_test.json").Build();
+                return config;
+            }
+            catch
+            {
+                var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+                return config;
+            }
+            
         }
 
     }
