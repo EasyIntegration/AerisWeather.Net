@@ -18,14 +18,13 @@ namespace AerisWeather.Net.Clients
 
     }
 
-    public class Forecasts : IForecasts
+    public class Forecasts : BaseWeather, IForecasts
     {
         private const string ENDPOINT = "forecasts";
-        private IAerisClient aerisClient;
 
-        public Forecasts(IAerisClient aerisClient)
+        public Forecasts(IAerisClient aerisClient) : base(aerisClient)
         {
-            this.aerisClient = aerisClient;
+            this.EndPoint = ENDPOINT;
         }
 
         private async Task<ForecastsResponse> GetForecast(string location, GetForecastParameters parameters)
